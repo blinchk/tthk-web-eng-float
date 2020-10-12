@@ -21,14 +21,38 @@ hr {
     margin: 2rem 33%;
 }
 
+@keyframes getFromLeft {
+    0% { left: -100%; 
+    opacity: 0 }
+    100% {left: 0%;
+    opacity: 1 }
+}
+
+@keyframes getFromRight {
+    0% { right: -100%; 
+        opacity: 0 }
+        100% {right: 0%;
+        opacity: 1 }
+}
+
+@keyframes changeImageOpacity {
+    0% { opacity: 0 }
+    100% {opacity: 1 }
+}
+
 .main-content {
+    position: relative;
     background-color: var(--main-color);
     width: 75%;
     padding: 2rem 2rem;
     margin: 0 auto;
     color: white;
     text-align: center;
+    animation-name: getFromLeft;
+    animation-duration: 1s;
 }
+
+
 
 .main-content-text > p {
     padding: 1rem 20vh;
@@ -56,6 +80,7 @@ hr {
 
 .main-content ul {
     padding: 1rem 1rem;
+    list-style: none;
 }
 
 .main-content-text {
@@ -82,14 +107,19 @@ hr {
 
 nav { 
     margin: 0 auto;
+    position: relative;
     width: 75%;
     color: white;
     padding: 1.5rem;
     font-size: 1.5rem;
     background-image: linear-gradient(to right, var(--main-color), var(--second-color));
+    animation-name: getFromRight;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 footer { 
+    position: relative;
     margin: 0 auto;
     width: 75%;
     background-image: linear-gradient(to left, var(--second-color), var(--main-color), var(--second-color));
@@ -97,9 +127,13 @@ footer {
 }
 
 footer p {
+    position: relative;
     padding: 0.5rem 0.5rem;
     text-align: center;
     color: white;
+    animation-name: getFromRight;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 nav a {
@@ -125,6 +159,9 @@ nav a:hover:nth-child(1n+2) {
 
 .pc-img {
     position: relative;
+    animation-name: changeImageOpacity;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
 }
 
 .main-content {
